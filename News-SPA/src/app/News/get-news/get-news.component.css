@@ -1,0 +1,11 @@
+.gallary-wrapper{
+    text-align: center;
+    margin-top: 20px;
+}
+.ngx-gallary{
+    display: inline-block;
+    margin-bottom: 30px;
+    width: 500px;
+    height: 400px;
+    border-color:blue ;
+}

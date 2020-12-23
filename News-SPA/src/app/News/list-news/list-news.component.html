@@ -1,0 +1,15 @@
+
+    <div *ngFor="let x of news">
+        <app-card-list-news [tidings]='x'></app-card-list-news>
+    </div>
+
+    <div *ngIf="pagination.totalItems>0" class="d-flex justify-content-center">
+        <pagination [boundaryLinks]="true" [itemsPerPage]="pagination.itemsPerPage" [totalItems]="pagination.totalItems"
+          [(ngModel)]="pagination.currentPage" 
+       (pageChanged)="pageChanged($event);"
+       previousText="&lsaquo;" nextText="&rsaquo;"
+          firstText="&laquo;" lastText="&raquo;">
+      
+        </pagination>
+      </div>
+    

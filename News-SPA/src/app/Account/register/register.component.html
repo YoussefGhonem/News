@@ -1,0 +1,65 @@
+<div class="vizew-breadcrumb">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">Register</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="vizew-login-area section-padding-80">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-6">
+                <div class="login-content">
+                    <div class="section-heading">
+                        <h4>Register Form</h4>
+                        <div class="line"></div>
+                    </div>
+                    <form [formGroup]="registerForm" (ngSubmit)="register()">
+                        <div class="form-group">
+                            <input type="text" formControlName="username" name="username" class="form-control"  placeholder="User Name">
+                            <div style="color: crimson;" *ngIf="this.registerForm.get('username').touched &&
+                            this.registerForm.get('username').hasError('required')">
+                            Required
+               </div>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="email"formControlName="email" name="email" class="form-control" placeholder="Email">
+                            <div style="color: crimson;" *ngIf="this.registerForm.get('email').touched &&
+                            this.registerForm.get('email').hasError('required')">
+                            Required
+               </div>
+               <div style="color: crimson;" *ngIf="this.registerForm.get('email').hasError('email')">
+                Email Not Valid</div>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" formControlName="password" class="form-control" name="password"  
+                                placeholder="Password">
+
+                                <div style="color: crimson;" *ngIf="this.registerForm.get('password').touched &&
+                                this.registerForm.get('password').hasError('required')">
+                                Required
+                   </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="custom-control custom-checkbox mr-sm-2">
+
+                                <label [routerLink]="['/login']" style="cursor: pointer; outline: none;">You Have An
+                                    Account ? </label>
+                            </div>
+                        </div>
+                        <button [disabled]="registerForm.invalid" type="submit" class="btn vizew-btn w-100 mt-30">Register</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
